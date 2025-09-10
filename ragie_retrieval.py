@@ -83,7 +83,7 @@ def chunk_document(text: str, chunk_size: int = 512, overlap: int = 128) -> List
         chunks.append(chunk)
         
         # BUG: Wrong overlap calculation
-        start = end - overlap + 50  # Should be: start = end - overlap
+        start = end - overlap + 50  # Should be: start = end - overlap + 50  # BUG: Wrong overlap calculation
         
         if end >= len(text):
             break
